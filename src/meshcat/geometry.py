@@ -127,6 +127,30 @@ class Cylinder(Geometry):
         }
 
 
+"""
+A capsule of the given length and radius. By Three.js convention, the axis of
+rotational symmetry is aligned with the y-axis.
+"""
+class Capsule(Geometry):
+    def __init__(self, radius, length, cap_subdivisions=4, radial_segments=8):
+        super(Capsule, self).__init__()
+        self.radius = radius
+        self.length = length
+        self.cap_subdivisions = cap_subdivisions
+        self.radial_segments = radial_segments
+
+    def lower(self, object_data):
+        return {
+            u"uuid": self.uuid,
+            u"type": u"CapsuleGeometry",
+            u"radius": self.radius,
+            u"length": self.length,
+            u"capSubdivisions": self.cap_subdivisions,
+            u"radialSegments": self.radial_segments
+        }
+
+
+
 class GenericMaterial(Material):
     def __init__(self, color=0xffffff, reflectivity=0.5, map=None,
                  side = 2, transparent = None, opacity = 1.0,
