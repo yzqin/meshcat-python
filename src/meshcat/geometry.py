@@ -221,6 +221,9 @@ class MeshToonMaterial(GenericMaterial):
 class LineBasicMaterial(GenericMaterial):
     _type=u"LineBasicMaterial"
 
+class MeshStandardMaterial(GenericMaterial):
+    _type=u"MeshStandardMaterial"
+
 
 class PngImage(Image):
     def __init__(self, data):

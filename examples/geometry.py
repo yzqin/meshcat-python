@@ -26,4 +26,8 @@ for i in range(2000):
     draw_times.append(time.time() - now)
     time.sleep(0.01)
 
+    if i > 100:
+        vis["/meshcat/capsule/<object>"].set_property("scale", [2, 2, 2])
+        vis["/meshcat/capsule/<object>"].set_property("color", [0.0, 0.99, 0.0, 0.5])
+
 print(sum(draw_times) / len(draw_times))
