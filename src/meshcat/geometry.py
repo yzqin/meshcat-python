@@ -37,6 +37,10 @@ class Image(ReferenceSceneElement):
     field = "images"
 
 
+class Light(ReferenceSceneElement):
+    field = "lights"
+
+
 class Box(Geometry):
     def __init__(self, lengths):
         super(Box, self).__init__()
@@ -310,7 +314,7 @@ class Object(SceneElement):
             u"materials": [],
             u"object": {
                 u"uuid": self.uuid,
-                u"type": self._type,
+                u"type": u"Mesh",
                 u"geometry": self.geometry.uuid,
                 u"material": self.material.uuid,
                 u"matrix": list(self.geometry.intrinsic_transform().flatten())
