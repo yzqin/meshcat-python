@@ -22,9 +22,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
-
       - name: Build wheels
         run: pip3 install setuptools build --upgrade && python -m build --wheel
 
@@ -33,3 +30,15 @@ jobs:
         with:
           name: wheels
           path: ./dist/*.whl
+
+      - name: Update Nightly Release
+        uses: andelf/nightly-release@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: nightly
+          name: 'Nightly Release'
+          prerelease: true
+          body: 'Nightly Release for Each Push'
+          files: |
+            ./dist/*.whl
