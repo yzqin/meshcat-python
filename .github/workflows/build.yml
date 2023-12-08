@@ -26,7 +26,7 @@ jobs:
         run: python -c "import sys; print(sys.version)"
 
       - name: Build wheels
-        run: setup.py bdist_wheel
+        run: python setup.py bdist_wheel
 
       - name: Upload wheels
         uses: actions/upload-artifact@v3
