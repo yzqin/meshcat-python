@@ -1,6 +1,6 @@
+graft src/meshcat/viewer
 prune src/meshcat/viewer/node_modules
 
-global-exclude **/tests/** **/test/** **/.git/** **/*.lock **/*.obj **/*.png
+global-exclude **/tests/** **/test/** **/.git/** **/*.lock **/*.obj **/*.png **/.gitignore **/..gitmodules **/*.md
 exclude meshcat.viewer.src.index.js
-include meshcat.viewer
 
