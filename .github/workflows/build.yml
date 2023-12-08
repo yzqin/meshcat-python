@@ -26,7 +26,7 @@ jobs:
         run: python -c "import sys; print(sys.version)"
 
       - name: Build wheels
-        run: pip3 install setuptools && python -m build --wheel
+        run: pip3 install setuptools build --upgrade && python -m build --wheel
 
       - name: Upload wheels
         uses: actions/upload-artifact@v3
