@@ -7,7 +7,7 @@ setup(name="meshcat-sim_web_fork",
       author="Robin Deits",
       author_email="mail@robindeits.com",
       license="MIT",
-      packages=find_packages("src",  exclude=["*.tests"]),
+      packages=find_packages("src", exclude=["*.tests"]),
       package_dir={"": "src"},
       test_suite="meshcat",
       entry_points={
@@ -25,5 +25,9 @@ setup(name="meshcat-sim_web_fork",
           "pillow >= 7.0.0"
       ],
       zip_safe=False,
-      include_package_data=True
+      include_package_data=True,
+      long_description="""
+      This is a fork for the original [meshcat-python](https://github.com/meshcat-dev/meshcat-python) to be used for 
+      [sim_web_visualizer](https://github.com/NVlabs/sim-web-visualizer).
+      """
       )
