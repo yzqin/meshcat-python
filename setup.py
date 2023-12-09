@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name="meshcat-sim_web_fork",
-      version="0.3.2",
+      version="0.4.0",
       description="WebGL-based visualizer for 3D geometries and scenes",
       url="https://github.com/rdeits/meshcat-python",
       author="Robin Deits",
